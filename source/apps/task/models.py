@@ -4,18 +4,18 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
-class Issue(Model):
+class Issue(models.Model):
     PRIORITY_CHOICES = (
-        (Lowest, 'Lowest'),
-        (Low, 'Low'),
-        (Medium, 'Medium'),
-        (High, 'High'),
-        (Highest, 'Highest'),
+        ('Lowest', 'Lowest'),
+        ('Low', 'Low'),
+        ('Medium', 'Medium'),
+        ('High', 'High'),
+        ('Highest', 'Highest'),
     )
     TASK_CHOICES = (
-        (OP, 'Open'),
-        (IN, 'In Progress'),
-        (CL, 'Closed')
+        ('OP', 'Open'),
+        ('IN', 'In Progress'),
+        ('CL', 'Closed')
     )
     user = models.ForeignKey(
         User,
